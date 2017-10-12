@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 //// include for List<> collection
 //using System.Collections.Generic;
 
-namespace app
+namespace app.Controllers
 {
 	[Route("api/passengers")]
     public class PassengerController : Controller

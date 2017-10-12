@@ -3,6 +3,8 @@
 
 // include for List<> collection
 using System.Collections.Generic;
+// include my model
+using app.Models;
 namespace app
 {
     public class PassengersDataStore
