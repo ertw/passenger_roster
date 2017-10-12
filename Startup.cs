@@ -14,7 +14,8 @@ namespace app
         public void ConfigureServices(IServiceCollection services)
         {
             // add mvc package
-            services.AddMvc();
+            services.AddMvc()
+                ;
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
