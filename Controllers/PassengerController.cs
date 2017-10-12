@@ -53,8 +53,8 @@ namespace app.Controllers
             };
             PassengersDataStore.Current.Passengers.Add(newPassenger);
             // return good with created at route
-            return CreatedAtRoute("GetPassenger", new 
-                    { id = newPassenger.Id });
+            return CreatedAtRoute("GetPassenger", new
+                    { newPassenger.Id }, newPassenger);
         }
     }
 }
