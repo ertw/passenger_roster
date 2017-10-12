@@ -23,6 +23,8 @@ namespace app
             {
                 app.UseDeveloperExceptionPage();
             }
+            // use status code pages
+            app.UseStatusCodePages();
             // use mvc package
             app.UseMvc();
 
