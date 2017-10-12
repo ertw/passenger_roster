@@ -1,9 +1,9 @@
 // passenger controller - handles routing
 
-// include controller
+// include aspnet for contollers & routing decoration
 using Microsoft.AspNetCore.Mvc;
-//// include for List<> collection
-//using System.Collections.Generic;
+// include Linq to filtering List<>
+using System.Linq;
 
 namespace app.Controllers
 {
@@ -13,17 +13,16 @@ namespace app.Controllers
         [HttpGet()]
         public IActionResult GetPassengers()
         {
-            return new JsonResult(PassengersDataStore.Current.Passengers);
-//            return new JsonResult(new List<object>()
-//                    {
-//                    new { id=1, name="George" }
-//                    , new { id=2, name="Newman" }
-//                    , new { id=3, name="Kramer" }
-//                    });
+            return Ok(PassengersDataStore.Current.Passengers);
         }
-//	[HttpGet("api/Passengers/{id}")]
-//	public JsonResult GetCity()
-//	{
-//	}
+        [HttpGet("{id}")]
+        public IActionResult GetPassenger(int id)
+        {
+            var passengerToReturn = PassengersDataStore.Current.Passengers
+                .FirstOrDefault(c => c.Id == id);
+            return passengerToReturn != null
+                ? (IActionResult) Ok(passengerToReturn)
+                : NotFound();
+        }
     }
 }

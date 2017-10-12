@@ -1,4 +1,5 @@
 // model of passengers
+
 namespace app.Models
 {
     public class PassengerDto
