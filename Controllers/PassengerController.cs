@@ -43,7 +43,8 @@ namespace app.Controllers
             // check model state for data validation purposes
             if (!ModelState.IsValid)
             {
-                return BadRequest();
+                // pass in model state, which includes error messages
+                return BadRequest(ModelState);
             }
             // find the highest id so we don't have a conflict
             var maxPassengerId = PassengersDataStore.Current.Passengers
