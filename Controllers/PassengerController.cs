@@ -23,7 +23,7 @@ namespace app.Controllers
         public IActionResult GetPassenger(int id)
         {
             var passengerToReturn = PassengersDataStore.Current.Passengers
-                // use FirstOrDefault() instead of While() so I get a null on not found
+                // use FirstOrDefault() instead of Where() so I get a null on not found
                 .FirstOrDefault(c => c.Id == id);
             return passengerToReturn != null
                 // cast because compiler won't do this implicitly
@@ -37,6 +37,11 @@ namespace app.Controllers
         {
             // if malformed body
             if (passenger == null)
+            {
+                return BadRequest();
+            }
+            // check model state for data validation purposes
+            if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
