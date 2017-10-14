@@ -17,6 +17,7 @@ namespace app.Controllers
         {
             return Ok(PassengersDataStore.Current.Passengers);
         }
+
         [HttpGet("{id}"
         // name this so we can refer to it later
         , Name = "GetPassenger")]
@@ -30,6 +31,7 @@ namespace app.Controllers
                 ? (IActionResult) Ok(passengerToReturn)
                 : NotFound();
         }
+
         [HttpPost()]
         public IActionResult CreatePassenger(
         // deserialize req to PassengerCreationDto
@@ -40,15 +42,18 @@ namespace app.Controllers
             {
                 return BadRequest();
             }
+
             // check model state for data validation purposes
             if (!ModelState.IsValid)
             {
                 // pass in model state, which includes error messages
                 return BadRequest(ModelState);
             }
+
             // find the highest id so we don't have a conflict
             var maxPassengerId = PassengersDataStore.Current.Passengers
                 .Max(p => p.Id);
+
             // create a new passenger
             var newPassenger = new PassengerDto()
             {
@@ -57,7 +62,9 @@ namespace app.Controllers
                 , LastName = passenger.LastName
                 , PhoneNumber = passenger.PhoneNumber
             };
+
             PassengersDataStore.Current.Passengers.Add(newPassenger);
+
             // return good with created at route
             return CreatedAtRoute("GetPassenger", new
                     { newPassenger.Id }, newPassenger);

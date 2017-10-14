@@ -4,6 +4,7 @@
 using System.Collections.Generic;
 // include my model
 using app.Models;
+
 namespace app
 {
     public class PassengersDataStore
@@ -11,8 +12,10 @@ namespace app
         // return a static instance of PassengersDataStore
         public static PassengersDataStore Current { get; }
         = new PassengersDataStore();
+
         // Public interface for List of passengers
         public List<PassengerDto> Passengers { get; set; }
+
         // Mock up some passengers
         public PassengersDataStore()
         {
