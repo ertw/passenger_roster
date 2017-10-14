@@ -6,8 +6,8 @@ namespace app.Entities
         public PassengerContext(DbContextOptions<PassengerContext> options)
             : base(options)
         {
-            // create the db if it doesn't exist
-            Database.EnsureCreated();
+            // run migrations
+            Database.Migrate();
         }
 
         public DbSet<Passenger> Passengers { get; set; }
