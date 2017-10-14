@@ -26,6 +26,7 @@ namespace app.Controllers
             var passengerToReturn = PassengersDataStore.Current.Passengers
                 // use FirstOrDefault() instead of Where() so I get a null on not found
                 .FirstOrDefault(c => c.Id == id);
+
             return passengerToReturn != null
                 // cast because compiler won't do this implicitly
                 ? (IActionResult) Ok(passengerToReturn)
