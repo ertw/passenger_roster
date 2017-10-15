@@ -41,10 +41,13 @@ namespace app
                 app.UseDeveloperExceptionPage();
             }
 
-            // use status code pages
             app.UseStatusCodePages();
+            
+            AutoMapper.Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<Entities.Passenger, Models.PassengerDto>();
+                    });
 
-            // use mvc package
             app.UseMvc();
 
             app.Run(async (context) =>

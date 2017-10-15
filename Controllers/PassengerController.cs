@@ -27,22 +27,9 @@ namespace app.Controllers
         {
             var passengerEntities = _passengerRepository.GetPassengers();
 
-            var results = new List<Models.PassengerDto>();
-
-            foreach (var passengerEntity in passengerEntities)
-            {
-                results.Add(new Models.PassengerDto
-                        {
-                        Id = passengerEntity.Id
-                        , FirstName = passengerEntity.FirstName
-                        , LastName = passengerEntity.LastName
-                        , PhoneNumber = passengerEntity.PhoneNumber
-                        });
-            }
+            var results = AutoMapper.Mapper.Map<IEnumerable<PassengerDto>>(passengerEntities);
 
             return Ok(results);
-
-            //return Ok(PassengersDataStore.Current.Passengers);
         }
 
         [HttpGet("{id}"
