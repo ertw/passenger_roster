@@ -37,14 +37,16 @@ namespace app.Controllers
         , Name = "GetPassenger")]
         public IActionResult GetPassenger(int id)
         {
-            var passengerToReturn = PassengersDataStore.Current.Passengers
-                // use FirstOrDefault() instead of Where() so I get a null on not found
-                .FirstOrDefault(c => c.Id == id);
+            var passenger = _passengerRepository.GetPassenger(id);
 
-            return passengerToReturn != null
-                // cast because compiler won't do this implicitly
-                ? (IActionResult) Ok(passengerToReturn)
-                : NotFound();
+            if (passenger == null)
+            {
+                return NotFound();
+            }
+
+            var result = AutoMapper.Mapper.Map<PassengerDto>(passenger);
+            
+            return Ok(result);
         }
 
         [HttpPost()]
