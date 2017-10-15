@@ -6,16 +6,43 @@ using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 // include my models
 using app.Models;
+using System.Collections.Generic;
 
 namespace app.Controllers
 {
 	[Route("api/passengers")]
     public class PassengerController : Controller
     {
+
+        private Services.IPassengerRepository _passengerRepository;
+
+        // inject repository
+        public PassengerController(Services.IPassengerRepository passengerRepository)
+        {
+            _passengerRepository = passengerRepository;
+        }
+
         [HttpGet()]
         public IActionResult GetPassengers()
         {
-            return Ok(PassengersDataStore.Current.Passengers);
+            var passengerEntities = _passengerRepository.GetPassengers();
+
+            var results = new List<Models.PassengerDto>();
+
+            foreach (var passengerEntity in passengerEntities)
+            {
+                results.Add(new Models.PassengerDto
+                        {
+                        Id = passengerEntity.Id
+                        , FirstName = passengerEntity.FirstName
+                        , LastName = passengerEntity.LastName
+                        , PhoneNumber = passengerEntity.PhoneNumber
+                        });
+            }
+
+            return Ok(results);
+
+            //return Ok(PassengersDataStore.Current.Passengers);
         }
 
         [HttpGet("{id}"

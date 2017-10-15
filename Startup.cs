@@ -28,6 +28,10 @@ namespace app
                 .AddEntityFrameworkNpgsql()
                 .AddDbContext<Entities.PassengerContext>(
                         options => options.UseNpgsql(connectionString));
+
+            // inject the db repository
+            services
+                .AddScoped<Services.IPassengerRepository, Services.PassengerRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
