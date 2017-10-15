@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-namespace app.Entities
+namespace PassengerRoster.Entities
 {
     public class PassengerContext : DbContext
     {

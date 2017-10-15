@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace app.Migrations
+namespace PassengerRoster.Migrations
 {
     public partial class PassengerDbInitialMigration : Migration
     {

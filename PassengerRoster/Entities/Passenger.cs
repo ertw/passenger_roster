@@ -1,7 +1,7 @@
 // include for data annotations
 using System.ComponentModel.DataAnnotations;
 
-namespace app.Entities
+namespace PassengerRoster.Entities
 {
     public class Passenger
     {

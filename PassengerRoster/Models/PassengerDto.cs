@@ -1,6 +1,6 @@
 // model of passengers
 
-namespace app.Models
+namespace PassengerRoster.Models
 {
     public class PassengerDto
     {

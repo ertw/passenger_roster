@@ -3,7 +3,7 @@
 // include for data annotations
 using System.ComponentModel.DataAnnotations;
 
-namespace app.Models
+namespace PassengerRoster.Models
 {
     public class PassengerCreationDto
     {

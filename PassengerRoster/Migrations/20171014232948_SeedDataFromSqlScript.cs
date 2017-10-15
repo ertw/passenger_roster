@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-namespace app.Migrations
+namespace PassengerRoster.Migrations
 {
     public partial class SeedDataFromSqlScript : Migration
     {

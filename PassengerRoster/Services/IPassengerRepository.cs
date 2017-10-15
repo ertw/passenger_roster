@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace app.Services
+namespace PassengerRoster.Services
 {
     public interface IPassengerRepository
     {

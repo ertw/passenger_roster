@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace app.Services
+namespace PassengerRoster.Services
 {
 
     public class PassengerRepository : IPassengerRepository

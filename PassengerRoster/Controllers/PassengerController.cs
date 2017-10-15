@@ -5,10 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 // include Linq to filtering List<>
 using System.Linq;
 // include my models
-using app.Models;
+using PassengerRoster.Models;
 using System.Collections.Generic;
 
-namespace app.Controllers
+namespace PassengerRoster.Controllers
 {
 	[Route("api/passengers")]
     public class PassengerController : Controller

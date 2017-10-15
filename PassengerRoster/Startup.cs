@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 
-namespace app
+namespace PassengerRoster
 {
     public class Startup
     {
@@ -42,7 +42,7 @@ namespace app
             }
 
             app.UseStatusCodePages();
-            
+
             AutoMapper.Mapper.Initialize(cfg =>
                     {
                         // map the passengers entity to the passenger DTO (reading)
