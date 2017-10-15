@@ -35,5 +35,15 @@ namespace app.Services
                 .Where(p => p.Id == id)
                 .FirstOrDefault();
         }
+
+        public void AddPassenger(Entities.Passenger passenger)
+        {
+            _context.Passengers.Add(passenger);
+        }
+
+        public bool Save()
+        {
+            return (_context.SaveChanges() >= 0);
+        }
     }
 }

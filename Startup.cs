@@ -45,7 +45,10 @@ namespace app
             
             AutoMapper.Mapper.Initialize(cfg =>
                     {
+                        // map the passengers entity to the passenger DTO (reading)
                         cfg.CreateMap<Entities.Passenger, Models.PassengerDto>();
+                        // map the passenger DTO to the passengers entity (writing)
+                        cfg.CreateMap<Models.PassengerCreationDto, Entities.Passenger>();
                     });
 
             app.UseMvc();

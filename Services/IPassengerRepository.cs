@@ -7,5 +7,9 @@ namespace app.Services
         IEnumerable<Entities.Passenger> GetPassengers();
 
         Entities.Passenger GetPassenger(int id);
+
+        void AddPassenger(Entities.Passenger passenger);
+
+        bool Save();
     }
 }

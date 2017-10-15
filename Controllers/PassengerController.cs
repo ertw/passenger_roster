@@ -67,20 +67,11 @@ namespace app.Controllers
                 return BadRequest(ModelState);
             }
 
-            // find the highest id so we don't have a conflict
-            var maxPassengerId = PassengersDataStore.Current.Passengers
-                .Max(p => p.Id);
+            var newPassenger = AutoMapper.Mapper.Map<Entities.Passenger>(passenger);
 
-            // create a new passenger
-            var newPassenger = new PassengerDto()
-            {
-                Id = ++maxPassengerId
-                , FirstName = passenger.FirstName
-                , LastName = passenger.LastName
-                , PhoneNumber = passenger.PhoneNumber
-            };
+            _passengerRepository.AddPassenger(newPassenger);
 
-            PassengersDataStore.Current.Passengers.Add(newPassenger);
+            _passengerRepository.Save();
 
             // return good with created at route
             return CreatedAtRoute("GetPassenger", new
