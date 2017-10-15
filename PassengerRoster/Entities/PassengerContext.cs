@@ -11,10 +11,5 @@ namespace PassengerRoster.Entities
         }
 
         public DbSet<Passenger> Passengers { get; set; }
-
-//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//        {
-//            optionsBuilder.UseSqlite("Data Source=passenger_register.sqlite");
-//        }
     }
 }

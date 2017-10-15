@@ -9,7 +9,7 @@ namespace PassengerRoster.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Sql(File.ReadAllText(@"Migrations/seedData.sql"));
+            migrationBuilder.Sql(File.ReadAllText(@"/app/PassengerRoster/Migrations/seedData.sql"));
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
