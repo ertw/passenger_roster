@@ -17,37 +17,41 @@ Basic JSON API
 - [x] Implement create
 - [x] Implement read
 - [x] Implement read all
-- [] Implement update
-- [] Implement delete
+- [ ] Implement update
+- [ ] Implement delete
+
 Persistant storage
 - [x] Connect to Postgres
 - [x] Add Entity Framework
 - [x] Implement repository pattern
 - [x] Add Automapper
+
 Frontend
-- [] Implement landing page
-- [] Implement create
-- [] Implement read by ID
-- [] Implement read all
-- [] Implement update
-- [] Implement delete
+- [ ] Implement landing page
+- [ ] Implement create
+- [ ] Implement read by ID
+- [ ] Implement read all
+- [ ] Implement update
+- [ ] Implement delete
+
 Testing
 - [x] Add Xunit
 - [x] Test create
-- [] Test read
-- [] Test read All
-- [] Test update
-- [] Test delete
+- [ ] Test read
+- [ ] Test read All
+- [ ] Test update
+- [ ] Test delete
+
 Devops
 - [x] Configure env vars for creds
 - [x] Dockerize dotnet core sdk
 - [x] Set up continuous build for dev
 - [x] Configure Docker Stack for production
-- [] Write development documentation
-- [] Dockerize dotnet core production
-- [] Set up continuous build for production
-- [] Configure Docker Stack for production
-- [] Write deployment documentation
+- [ ] Write development documentation
+- [ ] Dockerize dotnet core production
+- [ ] Set up continuous build for production
+- [ ] Configure Docker Stack for production
+- [ ] Write deployment documentation
 
 ## Development setup
 Clone the repo:
