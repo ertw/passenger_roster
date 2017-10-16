@@ -12,7 +12,7 @@ Build a cruise line passenger management system.
 * Allow users to create, read, update and delete passengers;
 * Frontend doesn't need to pretty, just make it work.
 
-##### Status
+#### Status
 Basic JSON API
 - [x] Implement create
 - [x] Implement read
